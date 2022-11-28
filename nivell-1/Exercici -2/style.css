@@ -1,0 +1,106 @@
+* {
+    max-width: 1200px;
+    margin: 6px;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
+}
+
+.box1 {
+    background: black;
+    display: flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
+}
+
+.box2 {
+    background: black;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.box3 {
+    background: black;
+}
+
+.menu1 {
+    background: #2d4059;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.bar {
+    background: rgb(227, 145, 21);
+}
+
+.menu2 {
+    background: #2d4059;
+    flex: 2 1 auto;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.innerbox {
+    background: rgb(227, 145, 21);
+    flex: 1 1 auto;
+}
+
+.item1 {
+    background-color: rgb(255, 42, 0);
+    flex-grow: 1;
+}
+
+.item2 {
+    background: rgb(255, 42, 0);
+    flex-grow: 5;
+}
+
+.item3 {
+    background-color: rgb(255, 42, 0);
+    flex-grow: 1;
+}
+
+.item4 {
+    background-color: rgba(247, 223, 14, 0.859);
+
+}
+
+.item5 {
+    background-color: #277cb9;
+    flex: 1 1 40%;
+}
+
+.item6 {
+    background-color: rgb(141, 181, 219);
+    flex: 1 1 100%;
+}
+
+.item7 {
+    background-color: rgb(223, 226, 18);
+
+}
+
+.item8 {
+    background-color: rgb(223, 226, 18);
+
+}
+
+.item9 {
+    background-color: rgb(242, 232, 33);
+
+}
+@media all and (max-width: 800px){
+    .box2{
+        background: yellow;
+        flex-direction: column;
+    }
+    .innerbox{
+        background: rgb(233, 9, 84);
+    }
+}

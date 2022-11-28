@@ -1,0 +1,274 @@
+* {
+    box-sizing: border-box
+}
+
+.container {
+    display: grid;
+}
+
+.header {
+    background-image: url("images/header.jpg");
+    background-position: 50% 50%;
+    background-attachment: content;
+    background-size: auto;
+    display: grid;
+    margin-bottom: 0.25em;
+}
+
+.menu {
+    display: grid;
+    grid-template-rows: auto;
+    align-items: center;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-areas:
+        "logo nav nav nav nav nav rrss";
+    margin-top: 3em;
+}
+
+.logo {
+    width: 2em;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-area: "logo";
+    margin-left: 2em;
+    animation: mover 1s ease-in;
+}
+
+.logo img {
+    max-height: 200%;
+    min-height: 20%;
+    width: 200%;
+}
+
+.logo img:hover {
+    background-color: #fcf6f6;
+}
+
+.nav {
+    margin-right: 7em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-area: "nav";
+
+}
+
+.nav a {
+    font-family: 'Anybody', cursive;
+    color: #343434;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    justify-content: space-between;
+
+}
+
+.nav a:hover {
+    color: #7882A4;
+}
+
+.rrss {
+    display: grid;
+    grid-area: "rrss";
+    grid-template-columns: 1fr 1fr;
+}
+
+.rrss a:hover {
+    color: #c5cbe5;
+}
+
+.message {
+    display: grid;
+    grid-auto-flow: column;
+    height: 10%;
+    animation: mover1 1s ease-in;
+}
+
+h1 {
+    font-family: 'IM Fell Double Pica', serif;
+    font-size: 26px;
+    color: rgba(217, 94, 42, 0.6);
+    font-weight: 400;
+    text-align: center;
+    line-height: 2.6;
+    margin-top: 150px;
+    margin-right: 40px;
+    margin-left: 40px;
+    background-color: rgba(203, 195, 195, 0.718);
+}
+
+.section {
+    display: grid;
+    grid-template-areas: "articles aside";
+    grid-template-columns: 3fr 1fr;
+
+}
+
+.articles {
+    font-family: 'Mukta', sans-serif;
+    background: #b9b7bd;
+    display: grid;
+    grid-template-areas: "article1 article2"
+                         "article3 article4"
+                        "article5 article5"
+    ;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-area: "articles";
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+}
+
+.article1 {
+    grid-area: "article1";
+}
+
+.article2 {
+    grid-area: "article2";
+}
+
+.article3 {
+    grid-area: "article3";
+}
+
+.article4 {
+    grid-area: "article4";
+}
+
+.article5 {
+    font-family: 'Roboto Mono', monospace;
+    grid-column: 1 / 3;
+    margin-left: 0.5em;
+}
+
+.article {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #dddee6;
+    display: grid;
+    margin: 0.25em;
+
+}
+
+.article span {
+    color: rgb(247, 224, 20);
+    padding: 10px 0;
+    margin-top: -40px;
+    margin-left: 10px;
+}
+
+.article a {
+    text-decoration: none;
+}
+
+.article img {
+    width: 100%;
+}
+
+.text {
+    font-family: 'Mukta', sans-serif;
+    columns: 2;
+    column-gap: 0.1em;
+    margin-left: 0.25em;
+}
+
+.aside {
+    font-family: 'Mukta', sans-serif;
+    background-color: #b9b5c1;
+    grid-area: "aside";
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+}
+
+h2 {
+    color: aliceblue;
+    text-align: left;
+    background-color: rgba(213, 52, 52, 0.566);
+    padding-left: 0.25em;
+}
+
+h3 {
+    text-align: center;
+}
+
+.footer {
+    font-family: 'Mukta', sans-serif;
+    background-color: rgb(246, 246, 243);
+    text-align: center;
+    margin-top: 0.25em;
+}
+
+@media (max-width: 900px) {
+
+    .section {
+        grid-template-columns: 1fr;
+        grid-template-areas:"articles"
+                             "aside";
+    }
+
+    .aside {
+        margin-top: 0.25em;
+    }
+}
+
+@media (max-width: 600px) {
+    .articles {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "article1"
+        "article2"
+        "article3"
+        "article4"
+        "article5";
+    }
+    .nav{
+        grid-template-columns: 1fr 1fr;
+        margin-left: 5em;
+    }
+    .header{
+        background-size: cover;
+    }
+    
+}
+
+@media all and (max-width: 460px) {
+
+    .header {
+        grid-template-columns: min-content;
+
+    }
+}
+
+@media (max-width: 460px) {
+
+    .aside {
+        grid-template-columns: auto;
+    }
+}
+
+@keyframes mover {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0)
+    }
+}
+
+@keyframes mover1 {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0)
+    }
+}
+/* https://github.com/JessSaavedra/grillas-y-gatitos */
